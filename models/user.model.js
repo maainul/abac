@@ -1,9 +1,11 @@
 import { Sequelize } from "sequelize";
 import db from "../config/database.js";
 
-const {DataTypes} = Sequelize;
+const { DataTypes } = Sequelize;
 
-  const User = db.define("users", {
+const User = db.define(
+  "users",
+  {
     firstname: {
       type: DataTypes.STRING,
     },
@@ -31,8 +33,16 @@ const {DataTypes} = Sequelize;
     dob: {
       type: DataTypes.STRING,
     },
-  },{
-    freezeTableName:true
-  });
+    createdBy: {
+      type: DataTypes.STRING,
+    },
+    updatedBy: {
+      type: DataTypes.STRING,
+    },
+  },
+  {
+    freezeTableName: true,
+  }
+);
 
-  export default User;
+export default User;

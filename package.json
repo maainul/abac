@@ -1,0 +1,30 @@
+{
+  "name": "rbac",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "this is resource based authentication system",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server" : "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maainul/rbac.git"
+  },
+  "author": "Md Mainul Hasan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maainul/rbac/issues"
+  },
+  "homepage": "https://github.com/maainul/rbac#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mysql2": "^3.1.2",
+    "sequelize": "^6.28.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}

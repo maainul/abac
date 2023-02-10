@@ -1,23 +1,24 @@
 {
-  "name": "rbac",
+  "name": "abac",
   "version": "1.0.0",
   "type": "module",
   "description": "this is resource based authentication system",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server" : "nodemon server.js"
+    "server": "nodemon server.js",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/maainul/rbac.git"
+    "url": "git+https://github.com/maainul/abac.git"
   },
   "author": "Md Mainul Hasan",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/maainul/rbac/issues"
+    "url": "https://github.com/maainul/abac/issues"
   },
-  "homepage": "https://github.com/maainul/rbac#readme",
+  "homepage": "https://github.com/maainul/abac#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.18.2",

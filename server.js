@@ -2,25 +2,26 @@ import express from "express";
 import db from "./config/database.js";
 import userRoutes from "./routes/userRoutes.js";
 import cors from "cors";
+import logger from "./logger/logger.js";
 
 const app = express();
 // database call
 try {
   await db.authenticate();
-  console.log("Database Connected successfully");
+  logger.info("Database Connected successfully");
 } catch (error) {
-  console.log("Connection error :", error);
+  logger.error("Connection error :", error);
 }
 // sync database for development
-db.sync().then(()=>{
-  console.log("Synced db.");
+db.sync({force:true}).then(()=>{
+  logger.info("Synced db.");
 })
 .catch((error)=>{
-  console.log("Failed to Sync db : "+ error.message);
+  logger.error("Failed to Sync db : "+ error.message);
 })
 
 // server call
 app.use(cors());
 app.use(express.json());
 app.use("/users", userRoutes);
-app.listen(5000, () => console.log("Server is running at port 5000"));
+app.listen(5000, () => logger.info("Server is running at port 5000"));

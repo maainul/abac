@@ -1,12 +1,18 @@
-import express from "express";
-import userRoutes from "./routes/userRoutes.js";
-import cors from "cors";
-import logger from "./logger/logger.js";
-
+const express = require("express");
+const cors = require("cors");
+const userRoutes = require("./routes/userRoutes");
+const ck = require('ckey');
 const app = express();
 
-// server call
+
+app.use(express.urlencoded({ extended: false, limit: "50mb" }));
+app.use(express.json({ limit: "50mb" }));
 app.use(cors());
-app.use(express.json());
+
 app.use("/users", userRoutes);
-app.listen(5000, () => logger.info("Server is running at port 5000"));
+
+ck.ENVIORNMENT === "PRODUCTION"
+    ? app.listen(ck.port)
+    : app.listen(ck.port, () =>
+        console.log("Server running on :" + ck.port)
+    );

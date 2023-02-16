@@ -1,12 +1,12 @@
-import express from "express"
+const  express = require("express")
 
-import getAll from "../controllers/user/getAll.js"
-import register from "../controllers/user/register.js";
+const  getAll = require("../controllers/user/getAll.js")
+const register = require("../controllers/user/register.js");
 
 const router = express.Router();
 
 router.get('/',getAll);
 router.post('/reg',register);
 
-export default router;
+module.exports = router;
 

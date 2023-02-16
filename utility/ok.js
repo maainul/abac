@@ -4,4 +4,4 @@ const OK = {
       message: "Information added successfully.",
 }
 
-export default OK;
+module.exports = OK;

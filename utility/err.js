@@ -4,4 +4,4 @@ const err = {
       message: "Something went wrong",
 }
 
-export default err;
+module.exports = err;

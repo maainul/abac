@@ -1,7 +1,14 @@
-import { Sequelize } from "sequelize";
-import db from "../config/database.js";
-
+const { Sequelize } = require("sequelize");
+const  {db }= require("../config/database.js");
 const { DataTypes } = Sequelize;
+
+const defaultProps = {
+    timestamps: false,
+    createdAt: false,
+    updatedAt: false,
+    freezeTableName: true,
+};
+
 
 const User = db.define(
   "users",
@@ -40,9 +47,7 @@ const User = db.define(
       type: DataTypes.STRING,
     },
   },
-  {
-    freezeTableName: true,
-  }
+    { ...defaultProps }
 );
 
-export default User;
+module.export = User;

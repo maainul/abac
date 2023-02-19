@@ -50,4 +50,4 @@ const User = db.define(
     { ...defaultProps }
 );
 
-module.export = User;
+module.exports = User;

@@ -6,10 +6,10 @@ const getAll = async (req, res) => {
   try {
     const users = await User.findAll();
     console.log("User data fetched successfully..")
-    res.json(users);
+    res.status(200).json(users)
   } catch (error) {
     console.error("User data fetched error")
-    res.json(err);
+    res.status(400).send(error)
   }
 };
 module.exports = getAll;

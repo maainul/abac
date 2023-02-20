@@ -1,7 +1,7 @@
 const err = {
-      status : 'error',
-      title : 'error',
-      message: "Something went wrong",
-}
+  status: "error",
+  title: "Error",
+  message: "Something went wrong",
+};
 
 module.exports = err;
